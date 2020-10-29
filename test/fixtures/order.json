@@ -3,8 +3,7 @@
   "table": 1,
   "date": "2020-21-01",
   "status": 1,
-  "orderItems": [],
-  "items": [
+  "orderItems": [
     {
       "item": {
         "name": 5,

@@ -5,7 +5,7 @@ class Order extends Equatable {
   final int table;
   final String date;
   final int status;
-  final Map<String, int> orderItems;
+  final Map<String, double> orderItems;
 
   Order({
     this.id,

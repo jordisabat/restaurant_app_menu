@@ -1,6 +1,6 @@
 import 'package:dartz/dartz.dart';
 import 'package:init/core/errors/failures.dart';
-import 'package:init/features/order/domain/entities/orderItem.dart';
+import 'package:init/features/order/domain/entities/product.dart';
 import 'package:init/features/order/domain/repositories/restaurant_repository.dart';
 
 class GetProducts {
