@@ -2,16 +2,16 @@ enum OrderStatus {
   just_created,
   ready,
   in_process,
-  ready_to_serve,
   serving,
+  served,
   done,
   canceled,
 }
 
 enum ProductStatus {
-  ready,
+  ordered,
   in_process,
-  done,
+  ready_to_serve,
   canceled,
   out_of_stock,
 }

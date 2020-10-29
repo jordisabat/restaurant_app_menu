@@ -1,12 +1,18 @@
 {
   "id": "12345676",
   "table": 1,
-  "date": "2020-21-01",
-  "status": 1,
+  "date": "2020-21-01 c17:52",
+  "status": 2,
   "orderItems": [
     {
-      "productId": "someId",
-      "quantity": 2
+      "productId": "123",
+      "quantity": 2,
+      "status": 1
+    },
+    {
+      "productId": "1321",
+      "quantity": 2,
+      "status": 2      
     }
   ]
 }
