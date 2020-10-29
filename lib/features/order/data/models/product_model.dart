@@ -6,11 +6,13 @@ class ProductModel extends Product {
     String name,
     double price,
     int type,
+    String imagePath,
   }) : super(
           id: id,
           name: name,
           price: price,
           type: type,
+          imagePath: imagePath,
         );
 
   factory ProductModel.fromJson(Map<String, dynamic> json) {
@@ -19,6 +21,7 @@ class ProductModel extends Product {
       name: json['name'],
       price: json['price'].toDouble(),
       type: json['type'],
+      imagePath: json['imagePath'],
     );
   }
 
@@ -28,6 +31,7 @@ class ProductModel extends Product {
       'name': name,
       'price': price,
       'type': type,
+      'imagePath': imagePath,
     };
   }
 }

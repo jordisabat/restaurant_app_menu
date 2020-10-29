@@ -23,5 +23,5 @@ Future<void> init() async {
   );
 
   // External
-  sl.registerLazySingleton(() => FirebaseFirestore.instance);
+  sl.registerLazySingleton(() => Firestore());
 }

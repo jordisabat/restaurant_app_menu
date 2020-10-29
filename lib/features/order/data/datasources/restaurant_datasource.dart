@@ -11,7 +11,7 @@ abstract class RestaurantDataSource {
 }
 
 class RestaurantDataSourceImpl implements RestaurantDataSource {
-  final FirebaseFirestore firestore;
+  final Firestore firestore;
 
   RestaurantDataSourceImpl({
     @required this.firestore,
@@ -20,10 +20,12 @@ class RestaurantDataSourceImpl implements RestaurantDataSource {
   @override
   Future<List<ProductModel>> getAllProducts() async {
     try {
-      final QuerySnapshot query = await firestore.collection("products").get();
+      final QuerySnapshot query =
+          await firestore.collection("products").getDocuments();
 
-      final List<ProductModel> products =
-          query.docs.map((document) => ProductModel()).toList();
+      final List<ProductModel> products = query.documents
+          .map((document) => ProductModel.fromJson(document.data))
+          .toList();
 
       return products;
     } catch (e) {

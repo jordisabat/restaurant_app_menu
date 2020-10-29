@@ -1,34 +1,34 @@
 {
   "project_info": {
-    "project_number": "450438154234",
-    "firebase_url": "https://restaruant-466b8.firebaseio.com",
-    "project_id": "restaruant-466b8",
-    "storage_bucket": "restaruant-466b8.appspot.com"
+    "project_number": "757917569933",
+    "firebase_url": "https://restaurant-b783a.firebaseio.com",
+    "project_id": "restaurant-b783a",
+    "storage_bucket": "restaurant-b783a.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:450438154234:android:aaf8c7705f6d18ff808643",
+        "mobilesdk_app_id": "1:757917569933:android:36d914ed0f6a0a6ed123c4",
         "android_client_info": {
-          "package_name": "com.jordi.restaruant"
+          "package_name": "com.jordi.restaurant"
         }
       },
       "oauth_client": [
         {
-          "client_id": "450438154234-mlmd7glvphpsl9o9pa30ljdevmaeklea.apps.googleusercontent.com",
+          "client_id": "757917569933-n7ap9tkicsqo0orofmopl4g7sakcgn6c.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyDfuPmOaIvsgnlAkh532wksCiZ2VabTxtU"
+          "current_key": "AIzaSyAaZY5NHj-wfgvIWQ4rPfE9mFLu0Jk8fs4"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "450438154234-mlmd7glvphpsl9o9pa30ljdevmaeklea.apps.googleusercontent.com",
+              "client_id": "757917569933-n7ap9tkicsqo0orofmopl4g7sakcgn6c.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

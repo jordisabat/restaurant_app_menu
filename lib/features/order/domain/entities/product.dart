@@ -5,12 +5,14 @@ class Product extends Equatable {
   final String name;
   final double price;
   final int type;
+  final String imagePath;
 
   Product({
     this.id,
     this.name,
     this.price,
     this.type,
+    this.imagePath,
   });
 
   @override
@@ -18,5 +20,6 @@ class Product extends Equatable {
         name,
         price,
         type,
+        imagePath,
       ];
 }
