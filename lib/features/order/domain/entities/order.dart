@@ -28,14 +28,17 @@ class Order extends Equatable {
 class OrderItem extends Equatable {
   final String productId;
   final int quantity;
+  final int status;
   OrderItem({
     this.productId,
     this.quantity,
+    this.status,
   });
 
   @override
   List<Object> get props => [
         productId,
         quantity,
+        status,
       ];
 }

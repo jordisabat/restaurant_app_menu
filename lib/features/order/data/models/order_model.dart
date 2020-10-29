@@ -42,21 +42,25 @@ class OrderModel extends Order {
 class OrderItemModel extends OrderItem {
   String productId;
   int quantity;
+  int status;
 
   OrderItemModel({
     this.productId,
     this.quantity,
+    this.status,
   });
 
   OrderItemModel.fromJson(Map<String, dynamic> json) {
     productId = json['productId'];
     quantity = json['quantity'];
+    status = json['status'];
   }
 
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = new Map<String, dynamic>();
     data['productId'] = this.productId;
     data['quantity'] = this.quantity;
+    data['status'] = this.status;
     return data;
   }
 
@@ -64,6 +68,7 @@ class OrderItemModel extends OrderItem {
     return {
       'productId': productId,
       'quantity': quantity,
+      'status': status,
     };
   }
 
@@ -73,6 +78,7 @@ class OrderItemModel extends OrderItem {
     return OrderItemModel(
       productId: map['productId'],
       quantity: map['quantity'],
+      status: map['status'],
     );
   }
 }

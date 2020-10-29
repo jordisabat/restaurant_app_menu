@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:init/features/order/domain/entities/product.dart';
 import 'package:init/services/unsplash_helper.dart';
 
-class ProductItem extends StatelessWidget {
+class ProductGridItem extends StatelessWidget {
   final Product product;
 
-  const ProductItem(
+  const ProductGridItem(
     this.product,
   ) : super();
 

@@ -1,25 +1,25 @@
 import 'package:flutter/material.dart';
 
-import '../../domain/entities/product.dart';
-import 'product_grid_item.dart';
+import '../../domain/entities/order.dart';
+import 'order_item.dart';
 
-class ProductList extends StatelessWidget {
-  final List<Product> products;
+class OrderList extends StatelessWidget {
+  final List<Order> orders;
 
-  const ProductList({Key key, @required this.products}) : super(key: key);
+  const OrderList({Key key, @required this.orders}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    if (products == null) {
+    if (orders == null) {
       return const CircularProgressIndicator();
     } else {
       return GridView.builder(
           gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
               crossAxisCount: 2, childAspectRatio: 0.9),
-          itemCount: products.length,
+          itemCount: orders.length,
           itemBuilder: (BuildContext context, int index) {
-            final product = products[index];
-            return ProductGridItem(product);
+            final order = orders[index];
+            return OrderItemList(order);
           });
     }
   }

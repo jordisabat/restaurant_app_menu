@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:init/features/order/presentation/bloc/bloc/order_bloc.dart'
+    as order;
 import 'package:init/features/order/presentation/bloc/product_bloc/product_bloc.dart';
 import 'package:init/features/order/presentation/widgets/loading_widget.dart';
+import 'package:init/features/order/presentation/widgets/order_list.dart';
 import 'package:init/features/order/presentation/widgets/product_list.dart';
 
 import '../../../../injection_container.dart';
@@ -27,47 +30,57 @@ class _RestaurantPageState extends State<RestaurantPage> {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-        body: Center(
-          child: getWidget(_selectedIndex, context),
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider(
+          create: (_) => slOrders,
         ),
-        bottomNavigationBar: BottomNavigationBar(
-          type: BottomNavigationBarType.fixed,
-          items: const <BottomNavigationBarItem>[
-            BottomNavigationBarItem(
-              icon: Icon(Icons.local_pizza),
-              label: 'Menu',
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.local_bar),
-              label: 'Barman',
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.restaurant),
-              label: 'Cheff',
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.face),
-              label: 'Waiter',
-            ),
-          ],
-          currentIndex: _selectedIndex,
-          onTap: _onItemTapped,
+        BlocProvider(
+          create: (_) => slProducts,
         ),
-        floatingActionButton: _selectedIndex == 0
-            ? FloatingActionButton(
-                backgroundColor: Colors.purple,
-                onPressed: () => Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => OrderPage(),
+      ],
+      child: SafeArea(
+        child: Scaffold(
+          body: Center(
+            child: getWidget(_selectedIndex, context),
+          ),
+          bottomNavigationBar: BottomNavigationBar(
+            type: BottomNavigationBarType.fixed,
+            items: const <BottomNavigationBarItem>[
+              BottomNavigationBarItem(
+                icon: Icon(Icons.local_pizza),
+                label: 'Menu',
+              ),
+              BottomNavigationBarItem(
+                icon: Icon(Icons.local_bar),
+                label: 'Barman',
+              ),
+              BottomNavigationBarItem(
+                icon: Icon(Icons.restaurant),
+                label: 'Cheff',
+              ),
+              BottomNavigationBarItem(
+                icon: Icon(Icons.face),
+                label: 'Waiter',
+              ),
+            ],
+            currentIndex: _selectedIndex,
+            onTap: _onItemTapped,
+          ),
+          floatingActionButton: _selectedIndex == 0
+              ? FloatingActionButton(
+                  backgroundColor: Colors.purple,
+                  onPressed: () => Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => OrderPage(),
+                    ),
                   ),
-                ),
-                tooltip: 'Toggle',
-                child: Icon(Icons.shopping_basket),
-              )
-            : null,
+                  tooltip: 'Toggle',
+                  child: Icon(Icons.shopping_basket),
+                )
+              : null,
+        ),
       ),
     );
   }
@@ -84,6 +97,25 @@ class _RestaurantPageState extends State<RestaurantPage> {
             return ProductList(products: state.products);
           } else if (state is Error) {
             return Text(state.message);
+          }
+          return Container();
+        },
+      ),
+    );
+  }
+
+  BlocProvider<order.OrderBloc> buildBarmanBlocProvider(BuildContext context) {
+    return BlocProvider(
+      create: (_) => sl<order.OrderBloc>()..add(order.GetAllOrdersEvent()),
+      child: BlocBuilder<order.OrderBloc, order.OrderState>(
+        builder: (context, state) {
+          if (state is Loading) {
+            return const LoadingWidget();
+          } else if (state is Loaded) {
+            print(state.orders.length);
+            return OrderList(orders: state.orders);
+          } else if (state is Error) {
+            return Text(state.orders);
           }
           return Container();
         },
