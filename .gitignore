@@ -46,4 +46,4 @@ app.*.map.json
 # Hide Key file
 /lib/services/api_keys.dart
 
-*.json
+google-services.json

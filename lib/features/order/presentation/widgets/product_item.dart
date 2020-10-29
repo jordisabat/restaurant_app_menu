@@ -23,7 +23,6 @@ class ProductItem extends StatelessWidget {
             ),
             subtitle: Text(
               product.price.toString(),
-              overflow: TextOverflow.ellipsis,
             ),
           ),
         ),
