@@ -1,0 +1,16 @@
+{
+  "id": "12345676",
+  "table": 1,
+  "date": "2020-21-01",
+  "status": 1,
+  "orderItems": [],
+  "items": [
+    {
+      "item": {
+        "name": 5,
+        "price": 21
+      },
+      "quantity": 2
+    }
+  ]
+}

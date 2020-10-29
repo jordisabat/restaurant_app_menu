@@ -3,7 +3,6 @@ import 'package:equatable/equatable.dart';
 class Order extends Equatable {
   final String id;
   final int table;
-  final int type;
   final String date;
   final int status;
   final Map<String, int> orderItems;
@@ -14,7 +13,6 @@ class Order extends Equatable {
     this.date,
     this.status,
     this.orderItems,
-    this.type,
   });
 
   @override
@@ -24,6 +22,5 @@ class Order extends Equatable {
         date,
         status,
         orderItems,
-        type,
       ];
 }

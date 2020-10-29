@@ -3,7 +3,7 @@ import 'package:equatable/equatable.dart';
 class OrderItem extends Equatable {
   final String id;
   final String name;
-  final String price;
+  final double price;
   final int type;
 
   OrderItem({
