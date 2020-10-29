@@ -5,14 +5,14 @@ class Order extends Equatable {
   final int table;
   final String date;
   final int status;
-  final Map<String, double> orderItems;
+  final Map<String, double> orderProducts;
 
   Order({
     this.id,
     this.table,
     this.date,
     this.status,
-    this.orderItems,
+    this.orderProducts,
   });
 
   @override
@@ -21,6 +21,6 @@ class Order extends Equatable {
         table,
         date,
         status,
-        orderItems,
+        orderProducts,
       ];
 }

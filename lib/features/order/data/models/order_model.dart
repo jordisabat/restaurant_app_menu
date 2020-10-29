@@ -6,13 +6,13 @@ class OrderModel extends Order {
     int table,
     String date,
     int status,
-    Map<String, double> orderItems,
+    Map<String, double> orderProducts,
   }) : super(
           id: id,
           table: table,
           date: date,
           status: status,
-          orderItems: orderItems,
+          orderProducts: orderProducts,
         );
 
   factory OrderModel.fromJson(Map<String, dynamic> json) {
@@ -21,8 +21,8 @@ class OrderModel extends Order {
       table: json['table'],
       date: json['date'],
       status: json['status'],
-      orderItems: json['orderItems'] != null
-          ? new Map<String, double>.from(json['orderItems'])
+      orderProducts: json['orderProducts'] != null
+          ? new Map<String, double>.from(json['orderProducts'])
           : [],
     );
   }
@@ -33,7 +33,7 @@ class OrderModel extends Order {
       'table': table,
       'date': date,
       'status': status,
-      'orderItems': orderItems,
+      'orderProducts': orderProducts,
     };
   }
 }
