@@ -5,7 +5,7 @@ class Order extends Equatable {
   final int table;
   final String date;
   final int status;
-  final Map<String, double> orderProducts;
+  final List<OrderItem> orderProducts;
 
   Order({
     this.id,
@@ -22,5 +22,20 @@ class Order extends Equatable {
         date,
         status,
         orderProducts,
+      ];
+}
+
+class OrderItem extends Equatable {
+  final String productIt;
+  final int quantity;
+  OrderItem({
+    this.productIt,
+    this.quantity,
+  });
+
+  @override
+  List<Object> get props => [
+        productIt,
+        quantity,
       ];
 }

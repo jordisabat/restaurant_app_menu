@@ -1,5 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:init/core/errors/exceptions.dart';
+import 'package:init/features/order/data/models/order_model.dart';
 import 'package:init/features/order/data/models/product_model.dart';
 import 'package:meta/meta.dart';
 
@@ -8,6 +9,7 @@ abstract class RestaurantDataSource {
   ///
   /// Throws a [ServerException] for all error codes
   Future<List<ProductModel>> getAllProducts();
+  Future<List<OrderModel>> getAllOrders();
 }
 
 class RestaurantDataSourceImpl implements RestaurantDataSource {
@@ -28,6 +30,22 @@ class RestaurantDataSourceImpl implements RestaurantDataSource {
           .toList();
 
       return products;
+    } catch (e) {
+      throw ServerException();
+    }
+  }
+
+  @override
+  Future<List<OrderModel>> getAllOrders() async {
+    try {
+      final QuerySnapshot query =
+          await firestore.collection("orders").getDocuments();
+
+      final List<OrderModel> orders = query.documents
+          .map((document) => OrderModel.fromJson(document.data))
+          .toList();
+
+      return orders;
     } catch (e) {
       throw ServerException();
     }

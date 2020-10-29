@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:init/features/order/domain/entities/order.dart';
 
 class OrderModel extends Order {
@@ -6,7 +8,7 @@ class OrderModel extends Order {
     int table,
     String date,
     int status,
-    Map<String, double> orderProducts,
+    List<OrderItem> orderProducts,
   }) : super(
           id: id,
           table: table,
@@ -22,7 +24,7 @@ class OrderModel extends Order {
       date: json['date'],
       status: json['status'],
       orderProducts: json['orderProducts'] != null
-          ? new Map<String, double>.from(json['orderProducts'])
+          ? new OrderItemModel.fromMap(json['orderProducts'])
           : [],
     );
   }
@@ -35,5 +37,43 @@ class OrderModel extends Order {
       'status': status,
       'orderProducts': orderProducts,
     };
+  }
+}
+
+class OrderItemModel extends OrderItem {
+  String productId;
+  int quantity;
+
+  OrderItemModel({
+    this.productId,
+    this.quantity,
+  });
+
+  OrderItemModel.fromJson(Map<String, dynamic> json) {
+    productId = json['productId'];
+    quantity = json['quantity'];
+  }
+
+  Map<String, dynamic> toJson() {
+    final Map<String, dynamic> data = new Map<String, dynamic>();
+    data['productId'] = this.productId;
+    data['quantity'] = this.quantity;
+    return data;
+  }
+
+  Map<String, dynamic> toMap() {
+    return {
+      'productId': productId,
+      'quantity': quantity,
+    };
+  }
+
+  factory OrderItemModel.fromMap(Map<String, dynamic> map) {
+    if (map == null) return null;
+
+    return OrderItemModel(
+      productId: map['productId'],
+      quantity: map['quantity'],
+    );
   }
 }

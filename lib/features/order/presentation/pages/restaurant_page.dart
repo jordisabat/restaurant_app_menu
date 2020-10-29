@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:init/features/order/presentation/product_bloc/product_bloc.dart';
+import 'package:init/features/order/presentation/bloc/product_bloc/product_bloc.dart';
 import 'package:init/features/order/presentation/widgets/loading_widget.dart';
 import 'package:init/features/order/presentation/widgets/product_list.dart';
 
 import '../../../../injection_container.dart';
+import 'order_page.dart';
 
 class RestaurantPage extends StatefulWidget {
   const RestaurantPage({Key key}) : super(key: key);
@@ -21,9 +22,12 @@ class _RestaurantPageState extends State<RestaurantPage> {
         body: buildBlocProvider(context),
         floatingActionButton: FloatingActionButton(
           backgroundColor: Colors.purple,
-          onPressed: () {
-            print('go to order page');
-          },
+          onPressed: () => Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => OrderPage(),
+            ),
+          ),
           tooltip: 'Toggle',
           child: Icon(Icons.shopping_basket),
         ),

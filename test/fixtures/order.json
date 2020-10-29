@@ -5,10 +5,7 @@
   "status": 1,
   "orderItems": [
     {
-      "item": {
-        "name": 5,
-        "price": 21
-      },
+      "productId": "someId",
       "quantity": 2
     }
   ]

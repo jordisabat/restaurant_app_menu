@@ -1,9 +1,10 @@
 import 'package:dartz/dartz.dart';
-import 'package:init/core/errors/failures.dart';
-import 'package:init/features/order/domain/entities/product.dart';
+
+import '../../../../core/errors/failures.dart';
+import '../../domain/entities/order.dart' as order;
+import '../entities/product.dart';
 
 abstract class RestaurantRepository {
   Future<Either<Failure, List<Product>>> getAllProducts();
-  // Future<Either<Failure, List<Order>>> getAllOrders();
-  // Future<Either<Failure, List<Product>>> getProductsByType(int type);
+  Future<Either<Failure, List<order.Order>>> getAllOrders();
 }
