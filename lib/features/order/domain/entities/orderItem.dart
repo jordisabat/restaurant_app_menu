@@ -1,12 +1,12 @@
 import 'package:equatable/equatable.dart';
 
-class OrderItem extends Equatable {
+class Product extends Equatable {
   final String id;
   final String name;
   final double price;
   final int type;
 
-  OrderItem({
+  Product({
     this.id,
     this.name,
     this.price,
