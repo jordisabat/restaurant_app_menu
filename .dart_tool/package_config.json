@@ -32,6 +32,24 @@
       "languageVersion": "2.10"
     },
     {
+      "name": "cloud_firestore",
+      "rootUri": "file:///home/jordi/development/flutter/.pub-cache/hosted/pub.dartlang.org/cloud_firestore-0.14.1+3",
+      "packageUri": "lib/",
+      "languageVersion": "2.1"
+    },
+    {
+      "name": "cloud_firestore_platform_interface",
+      "rootUri": "file:///home/jordi/development/flutter/.pub-cache/hosted/pub.dartlang.org/cloud_firestore_platform_interface-2.1.2",
+      "packageUri": "lib/",
+      "languageVersion": "2.0"
+    },
+    {
+      "name": "cloud_firestore_web",
+      "rootUri": "file:///home/jordi/development/flutter/.pub-cache/hosted/pub.dartlang.org/cloud_firestore_web-0.2.0+4",
+      "packageUri": "lib/",
+      "languageVersion": "2.1"
+    },
+    {
       "name": "collection",
       "rootUri": "file:///home/jordi/development/flutter/.pub-cache/hosted/pub.dartlang.org/collection-1.15.0-nullsafety.3",
       "packageUri": "lib/",
@@ -62,6 +80,30 @@
       "languageVersion": "2.10"
     },
     {
+      "name": "firebase",
+      "rootUri": "file:///home/jordi/development/flutter/.pub-cache/hosted/pub.dartlang.org/firebase-7.3.2",
+      "packageUri": "lib/",
+      "languageVersion": "2.7"
+    },
+    {
+      "name": "firebase_core",
+      "rootUri": "file:///home/jordi/development/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_core-0.5.0+1",
+      "packageUri": "lib/",
+      "languageVersion": "2.1"
+    },
+    {
+      "name": "firebase_core_platform_interface",
+      "rootUri": "file:///home/jordi/development/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_core_platform_interface-2.0.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.1"
+    },
+    {
+      "name": "firebase_core_web",
+      "rootUri": "file:///home/jordi/development/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_core_web-0.2.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.1"
+    },
+    {
       "name": "flutter",
       "rootUri": "file:///home/jordi/development/flutter/packages/flutter",
       "packageUri": "lib/",
@@ -70,6 +112,30 @@
     {
       "name": "flutter_test",
       "rootUri": "file:///home/jordi/development/flutter/packages/flutter_test",
+      "packageUri": "lib/",
+      "languageVersion": "2.10"
+    },
+    {
+      "name": "flutter_web_plugins",
+      "rootUri": "file:///home/jordi/development/flutter/packages/flutter_web_plugins",
+      "packageUri": "lib/",
+      "languageVersion": "2.0"
+    },
+    {
+      "name": "http",
+      "rootUri": "file:///home/jordi/development/flutter/.pub-cache/hosted/pub.dartlang.org/http-0.12.2",
+      "packageUri": "lib/",
+      "languageVersion": "2.4"
+    },
+    {
+      "name": "http_parser",
+      "rootUri": "file:///home/jordi/development/flutter/.pub-cache/hosted/pub.dartlang.org/http_parser-3.1.4",
+      "packageUri": "lib/",
+      "languageVersion": "2.3"
+    },
+    {
+      "name": "js",
+      "rootUri": "file:///home/jordi/development/flutter/.pub-cache/hosted/pub.dartlang.org/js-0.6.3-nullsafety.1",
       "packageUri": "lib/",
       "languageVersion": "2.10"
     },
@@ -90,6 +156,24 @@
       "rootUri": "file:///home/jordi/development/flutter/.pub-cache/hosted/pub.dartlang.org/path-1.8.0-nullsafety.1",
       "packageUri": "lib/",
       "languageVersion": "2.10"
+    },
+    {
+      "name": "pedantic",
+      "rootUri": "file:///home/jordi/development/flutter/.pub-cache/hosted/pub.dartlang.org/pedantic-1.9.2",
+      "packageUri": "lib/",
+      "languageVersion": "2.1"
+    },
+    {
+      "name": "plugin_platform_interface",
+      "rootUri": "file:///home/jordi/development/flutter/.pub-cache/hosted/pub.dartlang.org/plugin_platform_interface-1.0.3",
+      "packageUri": "lib/",
+      "languageVersion": "2.1"
+    },
+    {
+      "name": "quiver",
+      "rootUri": "file:///home/jordi/development/flutter/.pub-cache/hosted/pub.dartlang.org/quiver-2.1.4+1",
+      "packageUri": "lib/",
+      "languageVersion": "2.0"
     },
     {
       "name": "sky_engine",
@@ -152,7 +236,7 @@
       "languageVersion": "2.7"
     }
   ],
-  "generated": "2020-10-29T09:02:19.923638Z",
+  "generated": "2020-10-29T09:41:27.121721Z",
   "generator": "pub",
   "generatorVersion": "2.11.0-242.0.dev"
 }
