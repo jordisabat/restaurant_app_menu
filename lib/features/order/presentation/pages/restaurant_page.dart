@@ -55,17 +55,19 @@ class _RestaurantPageState extends State<RestaurantPage> {
           currentIndex: _selectedIndex,
           onTap: _onItemTapped,
         ),
-        floatingActionButton: FloatingActionButton(
-          backgroundColor: Colors.purple,
-          onPressed: () => Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (context) => OrderPage(),
-            ),
-          ),
-          tooltip: 'Toggle',
-          child: Icon(Icons.shopping_basket),
-        ),
+        floatingActionButton: _selectedIndex == 0
+            ? FloatingActionButton(
+                backgroundColor: Colors.purple,
+                onPressed: () => Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => OrderPage(),
+                  ),
+                ),
+                tooltip: 'Toggle',
+                child: Icon(Icons.shopping_basket),
+              )
+            : null,
       ),
     );
   }
