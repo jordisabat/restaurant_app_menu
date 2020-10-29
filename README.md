@@ -21,7 +21,7 @@ Order:
 - done
 - canceled
   
-Order:
+Product:
 - ordered
 - in_process
 - ready_to_serve,
