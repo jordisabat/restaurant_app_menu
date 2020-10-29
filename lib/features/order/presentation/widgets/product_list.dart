@@ -12,14 +12,14 @@ class ProductList extends StatelessWidget {
     if (products == null) {
       return const CircularProgressIndicator();
     } else {
-      return ListView.builder(
-        padding: const EdgeInsets.all(16),
-        itemCount: products.length,
-        itemBuilder: (BuildContext ctxt, int index) {
-          final product = products[index];
-          return ProductItem(product);
-        },
-      );
+      return GridView.builder(
+          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+              crossAxisCount: 2, childAspectRatio: 0.9),
+          itemCount: products.length,
+          itemBuilder: (BuildContext context, int index) {
+            final product = products[index];
+            return ProductItem(product);
+          });
     }
   }
 }
