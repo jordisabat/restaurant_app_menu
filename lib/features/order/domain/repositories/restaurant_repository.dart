@@ -7,4 +7,8 @@ import '../entities/product.dart';
 abstract class RestaurantRepository {
   Future<Either<Failure, List<Product>>> getAllProducts();
   Future<Either<Failure, List<order.Order>>> getAllOrders();
+
+  Future<Either<Failure, Order>> createOrder();
+  Future<Either<Failure, Order>> updateOrder();
+  Future<Either<Failure, Unit>> deleteOrder();
 }
