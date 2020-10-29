@@ -1,5 +1,3 @@
-import 'dart:convert';
-
 import 'package:init/features/order/domain/entities/order.dart';
 
 class OrderModel extends Order {
@@ -40,6 +38,7 @@ class OrderModel extends Order {
   }
 }
 
+// ignore: must_be_immutable
 class OrderItemModel extends OrderItem {
   String productId;
   int quantity;

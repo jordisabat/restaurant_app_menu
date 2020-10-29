@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:init/features/order/domain/entities/order.dart';
 import 'package:init/features/order/presentation/bloc/bloc/order_bloc.dart';
 import 'package:init/features/order/presentation/widgets/loading_widget.dart';
+import 'package:init/features/order/presentation/widgets/order_details.dart';
 import '../../../../injection_container.dart';
 
 class OrderPage extends StatefulWidget {
@@ -16,14 +17,7 @@ class OrderPage extends StatefulWidget {
 class _OrderPageState extends State<OrderPage> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Order Table 1'),
-      ),
-      body: Container(
-        child: buildBlocProvider(context),
-      ),
-    );
+    return buildBlocProvider(context);
   }
 
   BlocProvider<OrderBloc> buildBlocProvider(BuildContext context) {
@@ -35,7 +29,7 @@ class _OrderPageState extends State<OrderPage> {
             return const LoadingWidget();
           } else if (state is Loaded) {
             print(state.orders.length);
-            return Text('Orders ${state.orders[0].table}');
+            return OrderDetails(order: state.orders[0]);
           } else if (state is Error) {
             return Text(state.message);
           }

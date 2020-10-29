@@ -15,11 +15,46 @@ class RestaurantPage extends StatefulWidget {
 }
 
 class _RestaurantPageState extends State<RestaurantPage> {
+  int _selectedIndex = 0;
+  static const TextStyle optionStyle =
+      TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
+
+  void _onItemTapped(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        body: buildBlocProvider(context),
+        body: Center(
+          child: getWidget(_selectedIndex, context),
+        ),
+        bottomNavigationBar: BottomNavigationBar(
+          type: BottomNavigationBarType.fixed,
+          items: const <BottomNavigationBarItem>[
+            BottomNavigationBarItem(
+              icon: Icon(Icons.local_pizza),
+              label: 'Menu',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.local_bar),
+              label: 'Barman',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.restaurant),
+              label: 'Cheff',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.face),
+              label: 'Waiter',
+            ),
+          ],
+          currentIndex: _selectedIndex,
+          onTap: _onItemTapped,
+        ),
         floatingActionButton: FloatingActionButton(
           backgroundColor: Colors.purple,
           onPressed: () => Navigator.push(
@@ -48,12 +83,36 @@ class _RestaurantPageState extends State<RestaurantPage> {
           } else if (state is Error) {
             return Text(state.message);
           }
-          return Container(
-            height: MediaQuery.of(context).size.height / 3,
-            child: const Placeholder(),
-          );
+          return Container();
         },
       ),
     );
+  }
+
+  Widget getWidget(int selectedIndex, BuildContext context) {
+    switch (selectedIndex) {
+      case 0:
+        return buildBlocProvider(context);
+      case 1:
+        return Text(
+          'List of drink orders',
+          style: optionStyle,
+        );
+      case 2:
+        return Text(
+          'List of meal orders',
+          style: optionStyle,
+        );
+      case 3:
+        return Text(
+          'List of orders ready to serve',
+          style: optionStyle,
+        );
+      default:
+        return Text(
+          'Error',
+          style: optionStyle,
+        );
+    }
   }
 }
