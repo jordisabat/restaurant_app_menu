@@ -19,6 +19,14 @@ class _RestaurantPageState extends State<RestaurantPage> {
     return SafeArea(
       child: Scaffold(
         body: buildBlocProvider(context),
+        floatingActionButton: FloatingActionButton(
+          backgroundColor: Colors.purple,
+          onPressed: () {
+            print('go to order page');
+          },
+          tooltip: 'Toggle',
+          child: Icon(Icons.shopping_basket),
+        ),
       ),
     );
   }
